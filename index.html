@@ -72,9 +72,21 @@ section{padding:6rem 4rem}
 
 /* GALLERY */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.g-item{background:var(--rose-light);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:13px;border:1px solid rgba(196,135,154,.25);min-height:240px;gap:.6rem}
+.g-item{background:var(--rose-light);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:13px;border:1px solid rgba(196,135,154,.25);min-height:240px;gap:.6rem;overflow:hidden;position:relative}
+.g-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .g-item.tall{grid-row:span 2;min-height:500px}
-.g-tag{border:1px solid rgba(196,135,154,.5);color:var(--rose);padding:4px 14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;font-style:normal}
+.g-tag{border:1px solid rgba(196,135,154,.5);color:var(--rose);padding:4px 14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;font-style:normal;position:relative;z-index:1;background:rgba(255,255,255,.85)}
+
+/* GOOGLE REVIEWS */
+.reviews-bg{background:var(--white)}
+.reviews-strip{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
+.g-rating-big{text-align:center}
+.g-rating-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--bordeaux);line-height:1}
+.g-stars{color:#FBBC04;font-size:28px;letter-spacing:4px;margin:.4rem 0}
+.g-rating-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light)}
+.g-review-btn{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--bordeaux);color:var(--bordeaux);padding:14px 32px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;transition:all .3s;margin-top:2rem}
+.g-review-btn:hover{background:var(--bordeaux);color:var(--white)}
+.g-logo{font-size:18px}
 
 /* TESTIMONIALS */
 .test-bg{background:var(--champagne)}
@@ -212,11 +224,14 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
     <h2 class="section-title">Galeria de <em>momentos</em></h2>
   </div>
   <div class="gallery-grid">
-    <div class="g-item tall">[ Foto destaque ]<div class="g-tag">Casamento</div></div>
-    <div class="g-item">[ Foto ]<div class="g-tag">Aniversário</div></div>
-    <div class="g-item">[ Foto ]<div class="g-tag">Batizado</div></div>
-    <div class="g-item">[ Foto ]<div class="g-tag">Baby Shower</div></div>
-    <div class="g-item">[ Foto ]<div class="g-tag">Corporativo</div></div>
+    <div class="g-item tall"><img src="images/festa_1_ano_princesas.jpg" alt="Festa 1 ano princesas"><div class="g-tag">1.º Aniversário</div></div>
+    <div class="g-item"><img src="images/festa_50_anos.jpg" alt="Festa 50 anos"><div class="g-tag">50 Anos</div></div>
+    <div class="g-item"><img src="images/festa_15_anos.jpg" alt="Festa 15 anos"><div class="g-tag">15 Anos</div></div>
+    <div class="g-item"><img src="images/festa_14_anos.jpg" alt="Festa 14 anos"><div class="g-tag">14 Anos</div></div>
+    <div class="g-item"><img src="images/festa_4anos.jpg" alt="Festa 4 anos"><div class="g-tag">4 Anos</div></div>
+    <div class="g-item"><img src="images/festa_homem_aranha.jpg" alt="Festa Homem Aranha"><div class="g-tag">Temática</div></div>
+    <div class="g-item"><img src="images/decoracao_natasDouro.jpg" alt="Decoração Natas do Douro"><div class="g-tag">Decoração</div></div>
+    <div class="g-item"><img src="images/mesa_posta.jpg" alt="Mesa posta"><div class="g-tag">Mesa &amp; Styling</div></div>
   </div>
   <div style="text-align:center;margin-top:3rem">
     <a href="#" class="btn btn-dark">Ver Portfólio Completo</a>
@@ -244,6 +259,23 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
       <p class="test-name">— Patrícia Fernandes</p>
     </div>
   </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section class="reviews-bg" style="text-align:center">
+  <p class="section-label">Google Reviews</p>
+  <h2 class="section-title">A opinião de quem <em>nos escolheu</em></h2>
+  <div class="ornament" style="max-width:300px;margin:1.8rem auto"><span class="ornament-icon">✦</span></div>
+  <div class="reviews-strip">
+    <div class="g-rating-big">
+      <div class="g-rating-num">5.0</div>
+      <div class="g-stars">★★★★★</div>
+      <div class="g-rating-label">Classificação no Google</div>
+    </div>
+  </div>
+  <a href="https://share.google/EkKoN6esKJlUwZct2" target="_blank" rel="noopener" class="g-review-btn">
+    <span class="g-logo">G</span> Ver avaliações no Google
+  </a>
 </section>
 
 <!-- CTA -->
