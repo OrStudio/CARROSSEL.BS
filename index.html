@@ -10,20 +10,20 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* Light luxury palette */
-  --bg:#FAF7F2;
-  --bg2:#F2EDE5;
-  --bg3:#FFFDF9;
+  /* Warm beige / gold luxury palette */
+  --bg:#F9F3E8;
+  --bg2:#F0E6D0;
+  --bg3:#FDF8F0;
   --gold:#C9A96E;
   --gold-dark:#8B6B3D;
-  --gold-light:#E8C98A;
-  --text:#1C1209;
-  --text-mid:#5C4A35;
-  --text-dim:#9C8470;
-  --white:#FFFDF9;
-  --border:rgba(201,169,110,.25);
+  --gold-light:#E8D5A3;
+  --text:#2A1800;
+  --text-mid:#6B4A22;
+  --text-dim:#A88A60;
+  --white:#FDF9F2;
+  --border:rgba(180,135,70,.22);
 
-  /* Shared with contact section */
+  /* Contact / original palette */
   --champagne:#F5ECD7;--cream:#FAF6EF;
   --rose:#C4879A;--rose-light:#F0DDE3;--bordeaux:#6B2D3E;
   --c-text-dark:#2C1A1A;--c-text-mid:#5C4040;--c-text-light:#9C7B7B;
@@ -63,7 +63,7 @@ nav.scrolled{box-shadow:0 4px 24px rgba(28,18,9,.08)}
 .ticker-sep{color:var(--border);padding:0 .5rem}
 
 /* HERO */
-.hero{background:var(--bordeaux);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero{background:var(--bordeaux);min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,169,110,.07) 0%,transparent 70%)}
 .hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(201,169,110,.02) 80px,rgba(201,169,110,.02) 81px)}
 .hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -85,7 +85,7 @@ nav.scrolled{box-shadow:0 4px 24px rgba(28,18,9,.08)}
 .hero .btn{animation:fadeUp 1s ease .7s both}
 
 /* COUNTERS */
-.counters{background:var(--bordeaux);padding:3rem 4rem;display:flex;justify-content:center;gap:6rem;flex-wrap:wrap;border-bottom:1px solid rgba(201,169,110,.15)}
+.counters{background:var(--gold-dark);padding:3rem 4rem;display:flex;justify-content:center;gap:6rem;flex-wrap:wrap;border-bottom:1px solid rgba(201,169,110,.2)}
 .counter-item{text-align:center}
 .counter-num{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;color:var(--gold);line-height:1;display:block}
 .counter-prefix{font-size:32px;vertical-align:super;margin-right:2px}
@@ -151,13 +151,18 @@ section{padding:6rem 4rem}
 .g-review-btn:hover{color:var(--white)}
 .g-logo{font-weight:700;font-size:16px}
 
-/* TESTIMONIALS */
-.test-bg{background:var(--champagne)}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.test-card{background:var(--white);padding:2.2rem;border-left:2px solid var(--gold);transition:transform .3s,box-shadow .3s}
-.test-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(28,18,9,.1)}
-.test-quote{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--c-text-mid);line-height:1.8;margin-bottom:1.2rem}
-.test-quote::before{content:'\201C';font-size:44px;color:rgba(201,169,110,.35);display:block;line-height:1;margin-bottom:.3rem}
+/* TESTIMONIALS CAROUSEL */
+.test-bg{background:var(--bg2);overflow:hidden}
+.test-carousel-wrap{position:relative;overflow:hidden;margin-top:2rem}
+.test-carousel-wrap::before,.test-carousel-wrap::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:2;pointer-events:none}
+.test-carousel-wrap::before{left:0;background:linear-gradient(to right,var(--bg2),transparent)}
+.test-carousel-wrap::after{right:0;background:linear-gradient(to left,var(--bg2),transparent)}
+.test-track{display:flex;gap:1.5rem;animation:scrollCards 30s linear infinite;width:max-content}
+.test-track:hover{animation-play-state:paused}
+.test-card{background:var(--white);padding:2rem 2.2rem;border-left:2px solid var(--gold);width:320px;flex-shrink:0;transition:transform .3s,box-shadow .3s}
+.test-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(42,24,0,.1)}
+.test-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:.8rem}
+.test-quote{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--c-text-mid);line-height:1.8;margin-bottom:1rem}
 .test-name{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dark)}
 
 /* CTA STRIP */
@@ -226,6 +231,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
 @keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:.7;transform:none}}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:.3}100%{transform:translateY(-10vh) scale(1.4);opacity:0}}
+@keyframes scrollCards{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -266,7 +272,9 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
 </div>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/351929442733" class="wa-float" title="WhatsApp">💬</a>
+<a href="https://wa.me/351929442733" class="wa-float" title="WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
@@ -335,16 +343,16 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
 <!-- COUNTERS -->
 <div class="counters">
   <div class="counter-item reveal">
-    <span class="counter-num" data-target="1000" data-prefix="+" data-suffix="k"><span class="counter-prefix">+</span>0<span class="counter-suffix">k</span></span>
+    <span class="counter-num" data-target="1000" data-prefix="+"><span class="counter-prefix">+</span>0</span>
     <span class="counter-label" data-i18n="counter_events">Eventos Realizados</span>
   </div>
   <div class="counter-item reveal">
-    <span class="counter-num" data-target="13" data-suffix=""><span class="counter-prefix"></span>0</span>
+    <span class="counter-num" data-target="13"><span class="counter-prefix"></span>0</span>
     <span class="counter-label" data-i18n="counter_years">Anos de Experiência</span>
   </div>
   <div class="counter-item reveal">
-    <span class="counter-num" data-target="20" data-prefix="+" data-suffix="k"><span class="counter-prefix">+</span>0<span class="counter-suffix">k</span></span>
-    <span class="counter-label" data-i18n="counter_guests">Convidados Felizes</span>
+    <span class="counter-num" data-target="98" data-suffix="%">0<span class="counter-suffix">%</span></span>
+    <span class="counter-label" data-i18n="counter_satisfied">Clientes Satisfeitos</span>
   </div>
 </div>
 
@@ -433,20 +441,19 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
   <div style="text-align:center" class="reveal">
     <p class="section-label" data-i18n="test_label">O que dizem de nós</p>
     <h2 class="section-title" data-i18n="test_title">Palavras que nos <em>enchem o coração</em></h2>
+    <div class="ornament" style="max-width:400px;margin:1.8rem auto 0"><span class="ornament-icon">✦</span></div>
   </div>
-  <div class="ornament reveal" style="max-width:400px;margin:2rem auto 3rem"><span class="ornament-icon">✦</span></div>
-  <div class="test-grid stagger">
-    <div class="test-card">
-      <p class="test-quote" data-i18n="t1_quote">A Bárbara transformou o batizado do meu filho num verdadeiro sonho. Cada detalhe foi pensado com tanto carinho e amor.</p>
-      <p class="test-name">— Ana Sousa</p>
-    </div>
-    <div class="test-card">
-      <p class="test-quote" data-i18n="t2_quote">O nosso casamento foi absolutamente perfeito graças à equipa da Carrossel. Profissionalismo e criatividade em cada canto.</p>
-      <p class="test-name">— Maria & João Silva</p>
-    </div>
-    <div class="test-card">
-      <p class="test-quote" data-i18n="t3_quote">Superaram todas as expectativas! A festa da minha filha ficou incrível. Recomendo de olhos completamente fechados.</p>
-      <p class="test-name">— Patrícia Fernandes</p>
+  <div class="test-carousel-wrap reveal">
+    <div class="test-track" id="testTrack">
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">A Bárbara transformou o batizado do meu filho num verdadeiro sonho. Cada detalhe foi pensado com tanto carinho e amor.</p><p class="test-name">— Ana Sousa</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">O nosso casamento foi absolutamente perfeito graças à equipa da Carrossel. Profissionalismo e criatividade em cada canto.</p><p class="test-name">— Maria & João Silva</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">Superaram todas as expectativas! A festa da minha filha ficou incrível. Recomendo de olhos completamente fechados.</p><p class="test-name">— Patrícia Fernandes</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">Nunca imaginei que o aniversário da minha mãe podia ficar tão bonito. A Carrossel fez tudo com uma atenção ao detalhe incrível!</p><p class="test-name">— Filipa Rodrigues</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">Contratámos para o nosso noivado e ficámos completamente rendidos. A decoração estava deslumbrante e o staff impecável.</p><p class="test-name">— Catarina & Rui Mendes</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">A melhor decisão que tomámos para o batizado da nossa filha. Tudo correu na perfeição, sem qualquer stress da nossa parte.</p><p class="test-name">— Sandra Oliveira</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">Fizeram o 1.º aniversário da minha filha parecer um conto de fadas. Todos os convidados ficaram encantados com a decoração.</p><p class="test-name">— Joana Pereira</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">Equipa muito profissional e simpática. O evento corporativo que organizaram para nós superou todas as nossas expectativas.</p><p class="test-name">— António Carvalho</p></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-quote">Recomendo a toda a gente! A Bárbara tem um talento único para transformar qualquer espaço. O nosso casamento foi perfeito.</p><p class="test-name">— Inês & Miguel Costa</p></div>
     </div>
   </div>
 </section>
@@ -537,7 +544,12 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
           <label for="msg" data-i18n="form_msg">Mensagem</label>
           <textarea id="msg" placeholder="Conte-nos um pouco sobre o seu evento, número de convidados, tema..." data-i18n-placeholder="form_msg_ph"></textarea>
         </div>
-        <button type="submit" class="form-submit"><span data-i18n="form_submit">Enviar Pedido via WhatsApp 💬</span></button>
+        <button type="submit" class="form-submit">
+          <span data-i18n="form_submit" style="display:inline-flex;align-items:center;gap:.6rem">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Enviar Pedido via WhatsApp
+          </span>
+        </button>
       </form>
     </div>
   </div>
@@ -704,7 +716,8 @@ const counterObs = new IntersectionObserver((entries)=>{
     const tick=(now)=>{
       const p = Math.min((now-start)/dur,1);
       const ease = 1-Math.pow(1-p,3);
-      el.innerHTML=`<span class="counter-prefix">${prefix}</span>${Math.round(ease*target)}<span class="counter-suffix">${suffix}</span>`;
+      const val = Math.round(ease*target);
+      el.innerHTML=`<span class="counter-prefix">${prefix}</span>${val.toLocaleString('pt-PT')}<span class="counter-suffix">${suffix}</span>`;
       if(p<1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -712,6 +725,14 @@ const counterObs = new IntersectionObserver((entries)=>{
   });
 },{threshold:0.4});
 document.querySelectorAll('.counter-item').forEach(el=>counterObs.observe(el));
+
+/* ── TESTIMONIALS CAROUSEL duplicate for seamless loop ── */
+(function(){
+  const track = document.getElementById('testTrack');
+  if(!track) return;
+  const cards = track.innerHTML;
+  track.innerHTML = cards + cards;
+})();
 
 /* ── LIGHTBOX ── */
 function openLightbox(src){
