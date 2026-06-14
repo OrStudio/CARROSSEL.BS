@@ -26,20 +26,30 @@ nav{background:var(--white);border-bottom:1px solid var(--champagne);padding:0 4
 .nav-links a:hover{color:var(--gold-dark)}
 .nav-cta{border:1px solid var(--bordeaux);color:var(--bordeaux);padding:8px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;background:transparent;font-family:'Jost',sans-serif;transition:all .25s}
 .nav-cta:hover{background:var(--bordeaux);color:var(--white)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--bordeaux);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:72px 0 0 0;background:var(--white);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--text-mid);text-decoration:none}
+.mobile-menu .nav-cta{font-size:12px}
 
 /* HERO */
 .hero{background:var(--bordeaux);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(201,169,110,.03) 60px,rgba(201,169,110,.03) 61px)}
 .hero-inner{position:relative;z-index:1}
-.hero-pre{color:var(--gold);font-size:10px;letter-spacing:6px;text-transform:uppercase;margin-bottom:2rem;opacity:.8}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--white);letter-spacing:4px;line-height:1.1}
+.hero-pre{color:var(--gold);font-size:10px;letter-spacing:6px;text-transform:uppercase;margin-bottom:2rem;opacity:.8;animation:fadeDown .8s ease both}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--white);letter-spacing:4px;line-height:1.1;animation:fadeUp 1s ease .2s both}
 .hero h1 em{font-style:italic;color:var(--gold)}
-.hero-div{color:rgba(201,169,110,.4);font-size:24px;letter-spacing:16px;margin:2rem 0}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:rgba(240,221,227,.8);letter-spacing:1px;margin-bottom:3rem;line-height:1.6}
+.hero-div{color:rgba(201,169,110,.4);font-size:24px;letter-spacing:16px;margin:2rem 0;animation:fadeUp 1s ease .4s both}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:rgba(240,221,227,.8);letter-spacing:1px;margin-bottom:3rem;line-height:1.6;animation:fadeUp 1s ease .5s both}
 .btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:15px 44px;font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;background:transparent;font-family:'Jost',sans-serif;transition:all .3s;text-decoration:none}
 .btn:hover{background:var(--gold);color:var(--bordeaux)}
 .btn-dark{border-color:var(--bordeaux);color:var(--bordeaux)}
 .btn-dark:hover{background:var(--bordeaux);color:var(--white)}
+.hero .btn{animation:fadeUp 1s ease .7s both}
 
 /* SECTIONS */
 section{padding:6rem 4rem}
@@ -65,33 +75,35 @@ section{padding:6rem 4rem}
 .services-bg .ornament::before,.services-bg .ornament::after{background:rgba(201,169,110,.2)}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .service-card{border:1px solid rgba(201,169,110,.25);padding:2.5rem 2rem;text-align:center;transition:all .3s;cursor:default}
-.service-card:hover{border-color:var(--gold);background:rgba(201,169,110,.05)}
-.service-icon{font-size:32px;margin-bottom:1.2rem}
+.service-card:hover{border-color:var(--gold);background:rgba(201,169,110,.05);transform:translateY(-4px)}
+.service-icon{font-size:32px;margin-bottom:1.2rem;transition:transform .3s}
+.service-card:hover .service-icon{transform:scale(1.15)}
 .service-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);letter-spacing:1px;margin-bottom:.8rem}
 .service-card p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.8}
 
 /* GALLERY */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.g-item{background:var(--rose-light);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:13px;border:1px solid rgba(196,135,154,.25);min-height:240px;gap:.6rem;overflow:hidden;position:relative}
-.g-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.g-item.tall{grid-row:span 2;min-height:500px}
-.g-tag{border:1px solid rgba(196,135,154,.5);color:var(--rose);padding:4px 14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;font-style:normal;position:relative;z-index:1;background:rgba(255,255,255,.85)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:10px}
+.g-item{background:var(--rose-light);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:13px;border:1px solid rgba(196,135,154,.25);min-height:260px;gap:.6rem;overflow:hidden;position:relative;cursor:pointer}
+.g-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease}
+.g-item:hover img{transform:scale(1.06)}
+.g-item.tall{grid-row:span 2;min-height:530px}
+.g-item.wide{grid-column:span 2}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(107,45,62,.7) 0%,transparent 60%);opacity:0;transition:opacity .35s;z-index:1}
+.g-item:hover .g-overlay{opacity:1}
+.g-tag{padding:4px 14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;font-style:normal;position:relative;z-index:2;background:rgba(255,255,255,.9);color:var(--rose);transition:all .35s;margin-top:auto;align-self:flex-end;margin-bottom:.8rem;margin-right:.8rem}
+.g-item:hover .g-tag{background:var(--gold);color:var(--bordeaux)}
 
 /* GOOGLE REVIEWS */
 .reviews-bg{background:var(--white)}
-.reviews-strip{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
-.g-rating-big{text-align:center}
-.g-rating-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--bordeaux);line-height:1}
-.g-stars{color:#FBBC04;font-size:28px;letter-spacing:4px;margin:.4rem 0}
-.g-rating-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light)}
-.g-review-btn{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--bordeaux);color:var(--bordeaux);padding:14px 32px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;transition:all .3s;margin-top:2rem}
+.g-review-btn{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--bordeaux);color:var(--bordeaux);padding:14px 32px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;transition:all .3s;margin-top:1.5rem}
 .g-review-btn:hover{background:var(--bordeaux);color:var(--white)}
-.g-logo{font-size:18px}
+.g-logo{font-weight:700;font-size:16px}
 
 /* TESTIMONIALS */
 .test-bg{background:var(--champagne)}
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.test-card{background:var(--white);padding:2.2rem;border-left:3px solid var(--rose)}
+.test-card{background:var(--white);padding:2.2rem;border-left:3px solid var(--rose);transition:transform .3s,box-shadow .3s}
+.test-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(107,45,62,.08)}
 .test-quote{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--text-mid);line-height:1.8;margin-bottom:1.2rem}
 .test-quote::before{content:'\201C';font-size:40px;color:rgba(196,135,154,.3);display:block;line-height:1;margin-bottom:.3rem}
 .test-name{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose)}
@@ -119,7 +131,7 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);font-weight:300}
 .footer-logo span{font-style:italic;font-size:14px;color:var(--rose-light);display:block;letter-spacing:2px;margin-top:.2rem}
 .footer-divider{width:60px;height:1px;background:rgba(201,169,110,.3);margin:1.5rem auto}
-.socials{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0}
+.socials{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0;flex-wrap:wrap}
 .socials a{color:rgba(255,255,255,.4);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;transition:color .2s}
 .socials a:hover{color:var(--gold)}
 .footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:1px;margin-top:1.5rem}
@@ -127,12 +139,61 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
 /* WhatsApp float */
 .wa-float{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:200;transition:transform .2s}
 .wa-float:hover{transform:scale(1.1)}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:none}
+
+/* KEYFRAMES */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:.8;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 1.5rem}
+  .hero h1{font-size:46px}
+  .hero-sub{font-size:16px}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-img{aspect-ratio:16/9}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .g-item.tall{grid-row:span 1;min-height:240px}
+  .g-item.wide{grid-column:span 1}
+  .test-grid{grid-template-columns:1fr;gap:1rem}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .form-row{grid-template-columns:1fr}
+  .cta-strip .section-title{font-size:36px}
+  footer{padding:2.5rem 1.5rem}
+}
+@media(max-width:520px){
+  .hero h1{font-size:36px;letter-spacing:2px}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .socials{gap:1.2rem}
+}
 </style>
 </head>
 <body>
 
 <!-- WhatsApp Float -->
 <a href="https://wa.me/351929442733" class="wa-float" title="WhatsApp">💬</a>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio" onclick="closeMenu()">Início</a>
+  <a href="#sobre" onclick="closeMenu()">Sobre Nós</a>
+  <a href="#servicos" onclick="closeMenu()">Serviços</a>
+  <a href="#galeria" onclick="closeMenu()">Galeria</a>
+  <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  <button class="nav-cta" onclick="closeMenu();document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Orçamento</button>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -145,6 +206,9 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Orçamento</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -161,12 +225,12 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
 <!-- ABOUT -->
 <section id="sobre" style="background:var(--white)">
   <div class="about-grid">
-    <div class="about-img">
+    <div class="about-img reveal-left">
       <div class="about-img-inner">
         [ Coloca aqui a tua<br>foto favorita ]
       </div>
     </div>
-    <div class="about-text">
+    <div class="about-text reveal-right">
       <p class="section-label">Sobre nós</p>
       <h2 class="section-title">Uma empresa com<br><em>alma e dedicação</em></h2>
       <div class="ornament"><span class="ornament-icon">✦</span></div>
@@ -180,36 +244,36 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
 
 <!-- SERVICES -->
 <section id="servicos" class="services-bg">
-  <p class="section-label">O que fazemos</p>
-  <h2 class="section-title">Os nossos <em>serviços</em></h2>
-  <div class="ornament"><span class="ornament-icon">✦</span></div>
+  <p class="section-label reveal">O que fazemos</p>
+  <h2 class="section-title reveal">Os nossos <em>serviços</em></h2>
+  <div class="ornament reveal"><span class="ornament-icon">✦</span></div>
   <div class="services-grid">
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-icon">🎊</div>
       <h3>Decoração de Festas</h3>
       <p>Aniversários, batizados, baby showers — criamos cenários que surpreendem e encantam cada convidado.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-icon">💍</div>
       <h3>Casamentos & Noivados</h3>
       <p>O dia mais especial da sua vida merece uma decoração à altura do vosso amor e da vossa história.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-icon">🍽️</div>
       <h3>Catering & Staff</h3>
       <p>Gastronomia cuidada e equipa profissional para que não se preocupe com absolutamente nada.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-icon">🏢</div>
       <h3>Eventos Corporativos</h3>
       <p>Conferências, lançamentos e team buildings com a elegância que a sua empresa e equipa merecem.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-icon">📸</div>
       <h3>Fotografia & Vídeo</h3>
       <p>Preservamos cada memória especial com registo profissional do início ao fim do seu evento.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-icon">✨</div>
       <h3>Produção Completa</h3>
       <p>Tratamos de tudo, da ideia ao último detalhe. Você apenas desfruta do momento com quem ama.</p>
@@ -219,35 +283,42 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
 
 <!-- GALLERY -->
 <section id="galeria">
-  <div style="text-align:center;margin-bottom:3rem">
+  <div style="text-align:center;margin-bottom:3rem" class="reveal">
     <p class="section-label">O nosso trabalho</p>
     <h2 class="section-title">Galeria de <em>momentos</em></h2>
   </div>
   <div class="gallery-grid">
-    <div class="g-item tall"><img src="images/festa_Luiza_crianças.jpg" alt="Festa Luiza"><div class="g-tag">Aniversário</div></div>
+    <div class="g-item tall reveal"><img src="images/festa_Luiza_crianças.jpg" alt="Festa Luiza"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+    <div class="g-item reveal"><img src="images/festaFROZEN_1_kids.jpg" alt="Festa Frozen"><div class="g-overlay"></div><div class="g-tag">Temática Frozen</div></div>
+    <div class="g-item reveal"><img src="images/festa_homem_aranha.jpg" alt="Festa Homem Aranha"><div class="g-overlay"></div><div class="g-tag">Homem Aranha</div></div>
+    <div class="g-item reveal"><img src="images/festa10aninhos.jpg" alt="Festa 10 anos"><div class="g-overlay"></div><div class="g-tag">10 Anos</div></div>
+    <div class="g-item reveal"><img src="images/festa15anos.jpg" alt="Festa 15 anos"><div class="g-overlay"></div><div class="g-tag">15 Anos</div></div>
+    <div class="g-item wide reveal"><img src="images/catering1_adult.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+    <div class="g-item reveal"><img src="images/mesaPosta_adult.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+    <div class="g-item reveal"><img src="images/mesaPosta_2_adult.jpg" alt="Mesa posta 2"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
   </div>
-  <div style="text-align:center;margin-top:3rem">
-    <a href="#" class="btn btn-dark">Ver Portfólio Completo</a>
+  <div style="text-align:center;margin-top:3rem" class="reveal">
+    <a href="https://www.instagram.com/carrossel.bs/" target="_blank" rel="noopener" class="btn btn-dark">Ver mais no Instagram</a>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="test-bg">
-  <div style="text-align:center">
+  <div style="text-align:center" class="reveal">
     <p class="section-label">O que dizem de nós</p>
     <h2 class="section-title">Palavras que nos <em>enchem o coração</em></h2>
   </div>
-  <div class="ornament" style="max-width:400px;margin:2rem auto 3rem"><span class="ornament-icon">✦</span></div>
+  <div class="ornament reveal" style="max-width:400px;margin:2rem auto 3rem"><span class="ornament-icon">✦</span></div>
   <div class="test-grid">
-    <div class="test-card">
+    <div class="test-card reveal">
       <p class="test-quote">A Bárbara transformou o batizado do meu filho num verdadeiro sonho. Cada detalhe foi pensado com tanto carinho e amor.</p>
       <p class="test-name">— Ana Sousa</p>
     </div>
-    <div class="test-card">
+    <div class="test-card reveal">
       <p class="test-quote">O nosso casamento foi absolutamente perfeito graças à equipa da Carrossel. Profissionalismo e criatividade em cada canto.</p>
       <p class="test-name">— Maria & João Silva</p>
     </div>
-    <div class="test-card">
+    <div class="test-card reveal">
       <p class="test-quote">Superaram todas as expectativas! A festa da minha filha ficou incrível. Recomendo de olhos completamente fechados.</p>
       <p class="test-name">— Patrícia Fernandes</p>
     </div>
@@ -255,28 +326,32 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
 </section>
 
 <!-- GOOGLE REVIEWS -->
-<section class="reviews-bg" style="text-align:center">
-  <p class="section-label">Google Reviews</p>
-  <h2 class="section-title">A opinião de quem <em>nos escolheu</em></h2>
-  <div class="ornament" style="max-width:300px;margin:1.8rem auto"><span class="ornament-icon">✦</span></div>
-  <a href="https://share.google/EkKoN6esKJlUwZct2" target="_blank" rel="noopener" class="g-review-btn" style="margin-top:1rem">
-    <span class="g-logo">G</span> Ver avaliações no Google
-  </a>
+<section class="reviews-bg" style="text-align:center;padding:4rem">
+  <div class="reveal">
+    <p class="section-label">Google Reviews</p>
+    <h2 class="section-title">A opinião de quem <em>nos escolheu</em></h2>
+    <div class="ornament" style="max-width:300px;margin:1.8rem auto"><span class="ornament-icon">✦</span></div>
+    <a href="https://share.google/EkKoN6esKJlUwZct2" target="_blank" rel="noopener" class="g-review-btn">
+      <span class="g-logo">G</span> Ver avaliações no Google
+    </a>
+  </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-strip">
-  <p class="section-label">Vamos criar juntos</p>
-  <h2 class="section-title">O seu evento <em>especial</em><br>começa aqui</h2>
-  <div class="ornament" style="max-width:300px;margin:2rem auto 1.5rem"><span class="ornament-icon">✦</span></div>
-  <p style="color:var(--text-light);font-size:15px;margin-bottom:2.5rem">Conte-nos o seu sonho e nós tratamos de todo o resto.</p>
-  <a href="#contacto" class="btn">Pedir Orçamento Gratuito</a>
+  <div class="reveal">
+    <p class="section-label">Vamos criar juntos</p>
+    <h2 class="section-title">O seu evento <em>especial</em><br>começa aqui</h2>
+    <div class="ornament" style="max-width:300px;margin:2rem auto 1.5rem"><span class="ornament-icon">✦</span></div>
+    <p style="color:var(--text-light);font-size:15px;margin-bottom:2.5rem">Conte-nos o seu sonho e nós tratamos de todo o resto.</p>
+    <a href="#contacto" class="btn">Pedir Orçamento Gratuito</a>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contacto" style="background:var(--cream)">
   <div class="contact-grid">
-    <div>
+    <div class="reveal-left">
       <p class="section-label">Fale connosco</p>
       <h2 class="section-title">Entre em <em>contacto</em></h2>
       <div class="ornament"><span class="ornament-icon">✦</span></div>
@@ -297,42 +372,44 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
         <div><span class="c-label">Horário</span><span class="c-val">Segunda a Sábado<br>09:00 — 19:00</span></div>
       </div>
     </div>
-    <div class="form">
-      <div class="form-row">
-        <div class="field">
-          <label>Nome</label>
-          <input type="text" placeholder="O seu nome">
+    <div class="reveal-right">
+      <form class="form" id="orcamentoForm" onsubmit="enviarWhatsApp(event)">
+        <div class="form-row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="O seu nome" required>
+          </div>
+          <div class="field">
+            <label for="tel">Telefone</label>
+            <input id="tel" type="tel" placeholder="+351">
+          </div>
         </div>
         <div class="field">
-          <label>Telefone</label>
-          <input type="tel" placeholder="+351">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="email@exemplo.com">
         </div>
-      </div>
-      <div class="field">
-        <label>Email</label>
-        <input type="email" placeholder="email@exemplo.com">
-      </div>
-      <div class="field">
-        <label>Tipo de evento</label>
-        <select>
-          <option value="">Selecione o tipo de evento</option>
-          <option>Aniversário</option>
-          <option>Casamento</option>
-          <option>Batizado</option>
-          <option>Baby Shower</option>
-          <option>Evento Corporativo</option>
-          <option>Outro</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Data do evento (aproximada)</label>
-        <input type="date">
-      </div>
-      <div class="field">
-        <label>Mensagem</label>
-        <textarea placeholder="Conte-nos um pouco sobre o seu evento, número de convidados, tema..."></textarea>
-      </div>
-      <button class="btn btn-dark" style="width:100%;justify-content:center;padding:15px">Enviar Pedido de Orçamento</button>
+        <div class="field">
+          <label for="evento">Tipo de evento</label>
+          <select id="evento">
+            <option value="">Selecione o tipo de evento</option>
+            <option>Aniversário</option>
+            <option>Casamento</option>
+            <option>Batizado</option>
+            <option>Baby Shower</option>
+            <option>Evento Corporativo</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="data">Data do evento (aproximada)</label>
+          <input id="data" type="date">
+        </div>
+        <div class="field">
+          <label for="msg">Mensagem</label>
+          <textarea id="msg" placeholder="Conte-nos um pouco sobre o seu evento, número de convidados, tema..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center;padding:15px">Enviar Pedido via WhatsApp 💬</button>
+      </form>
     </div>
   </div>
 </section>
@@ -343,12 +420,53 @@ footer{background:var(--text-dark);padding:3.5rem 4rem;text-align:center}
   <div class="footer-divider"></div>
   <div class="socials">
     <a href="https://www.instagram.com/carrossel.bs/" target="_blank" rel="noopener">Instagram</a>
-    <a href="#">Facebook</a>
+    <a href="https://www.facebook.com/carrossel.bs" target="_blank" rel="noopener">Facebook</a>
     <a href="#">TikTok</a>
-    <a href="#">WhatsApp</a>
+    <a href="https://wa.me/351929442733" target="_blank" rel="noopener">WhatsApp</a>
   </div>
-  <p class="footer-copy">© 2024 Carrossel by Bárbara Silva &nbsp;·&nbsp; Todos os direitos reservados</p>
+  <p class="footer-copy">© 2025 Carrossel by Bárbara Silva &nbsp;·&nbsp; Todos os direitos reservados</p>
 </footer>
 
+<script>
+// Hamburger menu
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+
+// WhatsApp form
+function enviarWhatsApp(e){
+  e.preventDefault();
+  const nome  = document.getElementById('nome').value.trim();
+  const tel   = document.getElementById('tel').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const evento= document.getElementById('evento').value;
+  const data  = document.getElementById('data').value;
+  const msg   = document.getElementById('msg').value.trim();
+
+  let texto = `Olá Bárbara! 👋 Gostaria de pedir um orçamento.\n\n`;
+  texto += `*Nome:* ${nome}\n`;
+  if(tel)   texto += `*Telefone:* ${tel}\n`;
+  if(email) texto += `*Email:* ${email}\n`;
+  if(evento)texto += `*Tipo de evento:* ${evento}\n`;
+  if(data)  texto += `*Data:* ${new Date(data).toLocaleDateString('pt-PT')}\n`;
+  if(msg)   texto += `\n*Mensagem:* ${msg}`;
+
+  const url = `https://wa.me/351929442733?text=${encodeURIComponent(texto)}`;
+  window.open(url, '_blank');
+}
+</script>
 </body>
 </html>
