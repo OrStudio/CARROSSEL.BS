@@ -53,7 +53,7 @@ nav.scrolled{box-shadow:0 4px 24px rgba(28,18,9,.08)}
 .ticker-sep{color:var(--border);padding:0 .5rem}
 
 /* HERO */
-.hero{background:var(--bordeaux);min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;position:relative;overflow:hidden}
+.hero{background:var(--vinho);min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,169,110,.07) 0%,transparent 70%)}
 .hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(201,169,110,.02) 80px,rgba(201,169,110,.02) 81px)}
 .hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -117,6 +117,7 @@ section{padding:6rem 4rem}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .g-item{background:var(--champagne);min-height:260px;overflow:hidden;position:relative;cursor:zoom-in}
 .g-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .6s ease;filter:brightness(.9)}
+.g-extra{display:none}.g-extra.visible{display:block}
 .g-item:hover img{transform:scale(1.08);filter:brightness(1)}
 .g-item.tall{grid-row:span 2;min-height:530px}
 .g-item.wide{grid-column:span 2}
@@ -411,7 +412,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <p class="section-label" data-i18n="gallery_label">O nosso trabalho</p>
     <h2 class="section-title" data-i18n="gallery_title">Galeria de <em>momentos</em></h2>
   </div>
-  <div class="gallery-grid">
+  <div class="gallery-grid" id="galleryGrid">
     <div class="g-item tall reveal" onclick="openLightbox('images/festa_Luiza_crianças.jpg')"><img src="images/festa_Luiza_crianças.jpg" alt="Festa Luiza"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
     <div class="g-item reveal" onclick="openLightbox('images/FestaClara_1_aninho_coraçoes.jpg')"><img src="images/FestaClara_1_aninho_coraçoes.jpg" alt="Festa Clara 1 aninho"><div class="g-overlay"></div><div class="g-tag">1 Aninho</div></div>
     <div class="g-item reveal" onclick="openLightbox('images/festa_BarBie.jpg')"><img src="images/festa_BarBie.jpg" alt="Festa Barbie"><div class="g-overlay"></div><div class="g-tag">Temática Barbie</div></div>
@@ -424,14 +425,16 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <div class="g-item reveal" onclick="openLightbox('images/festa15anos.jpg')"><img src="images/festa15anos.jpg" alt="Festa 15 anos"><div class="g-overlay"></div><div class="g-tag">15 Anos</div></div>
     <div class="g-item wide reveal" onclick="openLightbox('images/mesaPosta_adult.jpg')"><img src="images/mesaPosta_adult.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
     <div class="g-item reveal" onclick="openLightbox('images/mesaPosta_2_adult.jpg')"><img src="images/mesaPosta_2_adult.jpg" alt="Mesa posta 2"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
-    <div class="g-item reveal" onclick="openLightbox('images/mesaposta_3_adulto_laranja.jpg')"><img src="images/mesaposta_3_adulto_laranja.jpg" alt="Mesa posta laranja"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
-    <div class="g-item wide reveal" onclick="openLightbox('images/mesaposta4_com_catering.jpg')"><img src="images/mesaposta4_com_catering.jpg" alt="Mesa com catering"><div class="g-overlay"></div><div class="g-tag">Mesa & Catering</div></div>
-    <div class="g-item reveal" onclick="openLightbox('images/catering1_adult.jpg')"><img src="images/catering1_adult.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
-    <div class="g-item reveal" onclick="openLightbox('images/catering2_adult.jpg')"><img src="images/catering2_adult.jpg" alt="Catering 2"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
-    <div class="g-item reveal" onclick="openLightbox('images/evento_inauguração_CappuccinoBrunch.jpg')"><img src="images/evento_inauguração_CappuccinoBrunch.jpg" alt="Inauguração Cappuccino Brunch"><div class="g-overlay"></div><div class="g-tag">Inauguração</div></div>
-    <div class="g-item reveal" onclick="openLightbox('images/evento_1ano_loja_hairConceptMasterColor.jpg')"><img src="images/evento_1ano_loja_hairConceptMasterColor.jpg" alt="1 Ano de loja"><div class="g-overlay"></div><div class="g-tag">Evento Corporativo</div></div>
+    <!-- hidden extras -->
+    <div class="g-item reveal g-extra" onclick="openLightbox('images/mesaposta_3_adulto_laranja.jpg')"><img src="images/mesaposta_3_adulto_laranja.jpg" alt="Mesa posta laranja"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+    <div class="g-item wide reveal g-extra" onclick="openLightbox('images/mesaposta4_com_catering.jpg')"><img src="images/mesaposta4_com_catering.jpg" alt="Mesa com catering"><div class="g-overlay"></div><div class="g-tag">Mesa & Catering</div></div>
+    <div class="g-item reveal g-extra" onclick="openLightbox('images/catering1_adult.jpg')"><img src="images/catering1_adult.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+    <div class="g-item reveal g-extra" onclick="openLightbox('images/catering2_adult.jpg')"><img src="images/catering2_adult.jpg" alt="Catering 2"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+    <div class="g-item reveal g-extra" onclick="openLightbox('images/evento_inauguração_CappuccinoBrunch.jpg')"><img src="images/evento_inauguração_CappuccinoBrunch.jpg" alt="Inauguração Cappuccino Brunch"><div class="g-overlay"></div><div class="g-tag">Inauguração</div></div>
+    <div class="g-item reveal g-extra" onclick="openLightbox('images/evento_1ano_loja_hairConceptMasterColor.jpg')"><img src="images/evento_1ano_loja_hairConceptMasterColor.jpg" alt="1 Ano de loja"><div class="g-overlay"></div><div class="g-tag">Evento Corporativo</div></div>
   </div>
-  <div style="text-align:center;margin-top:3rem" class="reveal">
+  <div style="text-align:center;margin-top:3rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap" class="reveal">
+    <button class="btn" id="galleryToggle" onclick="toggleGallery()"><span id="galleryToggleLabel">Ver mais momentos</span></button>
     <a href="https://www.instagram.com/carrossel.bs/" target="_blank" rel="noopener" class="btn btn-outline"><span data-i18n="gallery_btn">Ver mais no Instagram</span></a>
   </div>
 </section>
@@ -733,6 +736,18 @@ document.querySelectorAll('.counter-item').forEach(el=>counterObs.observe(el));
   const cards = track.innerHTML;
   track.innerHTML = cards + cards;
 })();
+
+/* ── GALLERY TOGGLE ── */
+function toggleGallery(){
+  const extras=document.querySelectorAll('.g-extra');
+  const btn=document.getElementById('galleryToggleLabel');
+  const open=extras[0].classList.contains('visible');
+  extras.forEach(el=>{
+    el.classList.toggle('visible',!open);
+  });
+  btn.textContent=open?'Ver mais momentos':'Ver menos';
+  if(open) document.getElementById('galeria').scrollIntoView({behavior:'smooth'});
+}
 
 /* ── LIGHTBOX ── */
 function openLightbox(src){
