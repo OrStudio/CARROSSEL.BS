@@ -180,7 +180,7 @@ section{padding:6rem 4rem}
 #contacto .ornament-icon{color:var(--gold);opacity:1}
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
 .contact-info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.8rem}
-.c-icon{font-size:22px;margin-top:3px;flex-shrink:0;color:var(--gold)}
+.c-icon{width:22px;height:22px;margin-top:3px;flex-shrink:0;color:var(--gold)}
 .c-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--bordeaux);display:block;margin-bottom:3px}
 .c-val{font-size:16px;color:var(--c-text-mid);line-height:1.7}
 .form{display:flex;flex-direction:column;gap:1rem}
@@ -308,7 +308,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
 <div class="ticker-wrap">
   <div class="ticker" id="ticker">
     <span class="ticker-item" data-i18n="ticker_1">Decoração de Festas</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item" data-i18n="ticker_2">Casamentos & Noivados</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item" data-i18n="ticker_2">Casamentos & Cerimonial</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_3">Catering & Staff</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_4">Batizados</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_5">Baby Shower</span><span class="ticker-sep">✦</span>
@@ -316,7 +316,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <span class="ticker-item" data-i18n="ticker_7">Fotografia & Vídeo</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_8">Produção Completa</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_1">Decoração de Festas</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item" data-i18n="ticker_2">Casamentos & Noivados</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item" data-i18n="ticker_2">Casamentos & Cerimonial</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_3">Catering & Staff</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_4">Batizados</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_5">Baby Shower</span><span class="ticker-sep">✦</span>
@@ -358,9 +358,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
 <section id="sobre" style="background:var(--bg)">
   <div class="about-grid">
     <div class="about-img reveal-left">
-      <div class="about-img-inner">
-        [ Coloca aqui a tua<br>foto favorita ]
-      </div>
+      <img src="images/FotoPredileta.jpg" alt="Bárbara Silva — Carrossel" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
     </div>
     <div class="about-text reveal-right">
       <p class="section-label" data-i18n="about_label">Sobre nós</p>
@@ -387,7 +385,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     </div>
     <div class="service-card">
       <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20l3-8h10l3 8"/><ellipse cx="24" cy="28" rx="10" ry="8"/><path d="M20 20c0 0 1 4 4 4s4-4 4-4"/><path d="M14 20h20"/><path d="M24 36v6M18 42h12"/></svg>
-      <h3 data-i18n="s2_title">Casamentos & Noivados</h3>
+      <h3 data-i18n="s2_title">Casamentos & Cerimonial</h3>
       <p data-i18n="s2_desc">O dia mais especial da sua vida merece uma decoração à altura do vosso amor e da vossa história.</p>
     </div>
     <div class="service-card">
@@ -398,7 +396,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <div class="service-card">
       <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="32" height="26" rx="1"/><path d="M16 14v-4a2 2 0 014 0v4M28 14v-4a2 2 0 014 0v4"/><path d="M8 22h32"/><rect x="14" y="28" width="6" height="6"/><rect x="28" y="28" width="6" height="6"/></svg>
       <h3 data-i18n="s4_title">Eventos Corporativos</h3>
-      <p data-i18n="s4_desc">Conferências, lançamentos e team buildings com a elegância que a sua empresa e equipa merecem.</p>
+      <p data-i18n="s4_desc">Conferências, inaugurações, aniversários de empresa e team buildings com a elegância que a sua empresa e equipa merecem.</p>
     </div>
     <div class="service-card">
       <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="16" width="36" height="26" rx="2"/><path d="M16 16v-4a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="24" cy="29" r="6"/><circle cx="24" cy="29" r="2.5"/><circle cx="37" cy="19" r="2"/></svg>
@@ -426,32 +424,55 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
       <div class="g-category-line"></div>
     </div>
     <div class="gallery-grid">
-      <div class="g-item reveal" onclick="openLightbox('images/festa_Luiza_crianças.jpg')"><img src="images/festa_Luiza_crianças.jpg" alt="Festa Luiza"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/FestaClara_1_aninho_coraçoes.jpg')"><img src="images/FestaClara_1_aninho_coraçoes.jpg" alt="Festa Clara"><div class="g-overlay"></div><div class="g-tag">1 Aninho</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/festa_BarBie.jpg')"><img src="images/festa_BarBie.jpg" alt="Festa Barbie"><div class="g-overlay"></div><div class="g-tag">Barbie</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/festa_minnie.jpg')"><img src="images/festa_minnie.jpg" alt="Festa Minnie"><div class="g-overlay"></div><div class="g-tag">Minnie</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/festa_harryPotter.jpg')"><img src="images/festa_harryPotter.jpg" alt="Harry Potter"><div class="g-overlay"></div><div class="g-tag">Harry Potter</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/festa_homem_aranha.jpg')"><img src="images/festa_homem_aranha.jpg" alt="Homem Aranha"><div class="g-overlay"></div><div class="g-tag">Homem Aranha</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Aniversario_0.jpg')"><img src="images/Aniversario_0.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Aniversario_01.jpg')"><img src="images/Aniversario_01.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Aniversario_1.jpg')"><img src="images/Aniversario_1.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Aniversario_2.jpg')"><img src="images/Aniversario_2.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Aniversario_3.jpg')"><img src="images/Aniversario_3.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Aniversario_4.jpg')"><img src="images/Aniversario_4.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
     </div>
     <div class="g-category-extra" id="extra-aniversarios">
       <div class="gallery-grid" style="margin-top:8px">
-        <div class="g-item reveal" onclick="openLightbox('images/festaMinecraft_Davi11ANOS.jpg')"><img src="images/festaMinecraft_Davi11ANOS.jpg" alt="Minecraft"><div class="g-overlay"></div><div class="g-tag">Minecraft</div></div>
-        <div class="g-item reveal" onclick="openLightbox('images/festa_xBOX.jpg')"><img src="images/festa_xBOX.jpg" alt="Xbox"><div class="g-overlay"></div><div class="g-tag">Xbox</div></div>
-        <div class="g-item reveal" onclick="openLightbox('images/festa10aninhos.jpg')"><img src="images/festa10aninhos.jpg" alt="10 Anos"><div class="g-overlay"></div><div class="g-tag">10 Anos</div></div>
-        <div class="g-item reveal" onclick="openLightbox('images/festa15anos.jpg')"><img src="images/festa15anos.jpg" alt="15 Anos"><div class="g-overlay"></div><div class="g-tag">15 Anos</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_5.jpg')"><img src="images/Aniversario_5.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_6.jpg')"><img src="images/Aniversario_6.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_7.jpg')"><img src="images/Aniversario_7.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_8.jpg')"><img src="images/Aniversario_8.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_9.jpg')"><img src="images/Aniversario_9.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_10.jpg')"><img src="images/Aniversario_10.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_11.jpg')"><img src="images/Aniversario_11.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_12.jpg')"><img src="images/Aniversario_12.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_13.jpg')"><img src="images/Aniversario_13.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_14.jpg')"><img src="images/Aniversario_14.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_15.jpg')"><img src="images/Aniversario_15.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_16.jpg')"><img src="images/Aniversario_16.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_17.jpg')"><img src="images/Aniversario_17.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Aniversario_18.jpg')"><img src="images/Aniversario_18.jpg" alt="Aniversário"><div class="g-overlay"></div><div class="g-tag">Aniversário</div></div>
       </div>
     </div>
     <button class="g-more-btn" onclick="toggleCat('extra-aniversarios',this)" data-more="+ Ver mais festas" data-less="− Ver menos">+ Ver mais festas</button>
   </div>
 
-  <!-- CASAMENTOS & BATIZADOS -->
+  <!-- CASAMENTOS & CERIMONIAL -->
   <div class="g-category reveal">
     <div class="g-category-header">
-      <h3 class="g-category-title">Casamentos & <em>Batizados</em></h3>
+      <h3 class="g-category-title">Casamentos & <em>Cerimonial</em></h3>
       <div class="g-category-line"></div>
     </div>
-    <div class="gallery-grid" id="cat-casamentos" style="min-height:240px;background:var(--champagne);display:grid;place-items:center">
-      <div style="grid-column:1/-1;text-align:center;padding:3rem 2rem;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--text-light);letter-spacing:1px">
+    <div class="gallery-grid" style="min-height:200px;background:var(--champagne);display:grid;place-items:center">
+      <div style="grid-column:1/-1;text-align:center;padding:2.5rem 2rem;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--text-light);letter-spacing:1px">
+        Em breve — as primeiras fotografias desta categoria chegam em breve ✦
+      </div>
+    </div>
+  </div>
+
+  <!-- BATIZADOS & COMUNHÕES -->
+  <div class="g-category reveal">
+    <div class="g-category-header">
+      <h3 class="g-category-title">Batizados & <em>Comunhões</em></h3>
+      <div class="g-category-line"></div>
+    </div>
+    <div class="gallery-grid" style="min-height:200px;background:var(--champagne);display:grid;place-items:center">
+      <div style="grid-column:1/-1;text-align:center;padding:2.5rem 2rem;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--text-light);letter-spacing:1px">
         Em breve — as primeiras fotografias desta categoria chegam em breve ✦
       </div>
     </div>
@@ -464,13 +485,24 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
       <div class="g-category-line"></div>
     </div>
     <div class="gallery-grid">
-      <div class="g-item reveal" onclick="openLightbox('images/mesaPosta_adult.jpg')"><img src="images/mesaPosta_adult.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/mesaPosta_2_adult.jpg')"><img src="images/mesaPosta_2_adult.jpg" alt="Mesa posta 2"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/mesaposta_3_adulto_laranja.jpg')"><img src="images/mesaposta_3_adulto_laranja.jpg" alt="Mesa laranja"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/mesaposta4_com_catering.jpg')"><img src="images/mesaposta4_com_catering.jpg" alt="Mesa com catering"><div class="g-overlay"></div><div class="g-tag">Mesa & Catering</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/catering1_adult.jpg')"><img src="images/catering1_adult.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/catering2_adult.jpg')"><img src="images/catering2_adult.jpg" alt="Catering 2"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/mesaPosta0.jpg')"><img src="images/mesaPosta0.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/mesaPosta1.jpg')"><img src="images/mesaPosta1.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/mesaPosta2.jpg')"><img src="images/mesaPosta2.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/catering1.jpg')"><img src="images/catering1.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/catering2.jpg')"><img src="images/catering2.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Catering3.jpg')"><img src="images/Catering3.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
     </div>
+    <div class="g-category-extra" id="extra-catering">
+      <div class="gallery-grid" style="margin-top:8px">
+        <div class="g-item reveal" onclick="openLightbox('images/mesaPosta5_rosa.jpg')"><img src="images/mesaPosta5_rosa.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/mesaPosta6.jpg')"><img src="images/mesaPosta6.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/mesaPosta7.jpg')"><img src="images/mesaPosta7.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/mesaPosta8.jpg')"><img src="images/mesaPosta8.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/mesaPosta9.jpg')"><img src="images/mesaPosta9.jpg" alt="Mesa posta"><div class="g-overlay"></div><div class="g-tag">Mesa & Styling</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Catering4.jpg')"><img src="images/Catering4.jpg" alt="Catering"><div class="g-overlay"></div><div class="g-tag">Catering</div></div>
+      </div>
+    </div>
+    <button class="g-more-btn" onclick="toggleCat('extra-catering',this)" data-more="+ Ver mais" data-less="− Ver menos">+ Ver mais</button>
   </div>
 
   <!-- EVENTOS CORPORATIVOS -->
@@ -480,9 +512,25 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
       <div class="g-category-line"></div>
     </div>
     <div class="gallery-grid">
-      <div class="g-item reveal" onclick="openLightbox('images/evento_inauguração_CappuccinoBrunch.jpg')"><img src="images/evento_inauguração_CappuccinoBrunch.jpg" alt="Inauguração"><div class="g-overlay"></div><div class="g-tag">Inauguração</div></div>
-      <div class="g-item reveal" onclick="openLightbox('images/evento_1ano_loja_hairConceptMasterColor.jpg')"><img src="images/evento_1ano_loja_hairConceptMasterColor.jpg" alt="1 Ano de loja"><div class="g-overlay"></div><div class="g-tag">Aniversário de Loja</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo0.jpg')"><img src="images/EventoCorporativo0.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Evento_Corporativo1.jpg')"><img src="images/Evento_Corporativo1.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Evento_Corporativo2.jpg')"><img src="images/Evento_Corporativo2.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
     </div>
+    <div class="g-category-extra" id="extra-corporativo">
+      <div class="gallery-grid" style="margin-top:8px">
+        <div class="g-item reveal" onclick="openLightbox('images/Evento_Corporativo3.jpg')"><img src="images/Evento_Corporativo3.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Evento_Corporativo4.jpg')"><img src="images/Evento_Corporativo4.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Evento_Corporativo5.jpg')"><img src="images/Evento_Corporativo5.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo7.jpg')"><img src="images/EventoCorporativo7.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo8.jpg')"><img src="images/EventoCorporativo8.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo9.jpg')"><img src="images/EventoCorporativo9.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo10.jpg')"><img src="images/EventoCorporativo10.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo11.jpg')"><img src="images/EventoCorporativo11.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/EventoCorporativo12.jpg')"><img src="images/EventoCorporativo12.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/eventoCorporativo13.jpg')"><img src="images/eventoCorporativo13.jpg" alt="Evento Corporativo"><div class="g-overlay"></div><div class="g-tag">Corporativo</div></div>
+      </div>
+    </div>
+    <button class="g-more-btn" onclick="toggleCat('extra-corporativo',this)" data-more="+ Ver mais eventos" data-less="− Ver menos">+ Ver mais eventos</button>
   </div>
 
   <div style="text-align:center;margin-top:2rem" class="reveal">
@@ -543,16 +591,20 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
       <h2 class="section-title" data-i18n="contact_title">Entre em <em>contacto</em></h2>
       <div class="ornament"><span class="ornament-icon">✦</span></div>
       <div class="contact-info-item">
-        <span class="c-icon">📞</span>
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
         <div><span class="c-label" data-i18n="contact_phone_label">Telefone / WhatsApp</span><span class="c-val">+351 929 442 733</span></div>
       </div>
       <div class="contact-info-item">
-        <span class="c-icon">📍</span>
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div><span class="c-label" data-i18n="contact_loc_label">Localização</span><span class="c-val">R. da Ribeira 30<br>4715-515 Braga, Portugal</span></div>
       </div>
       <div class="contact-info-item">
-        <span class="c-icon">🕐</span>
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         <div><span class="c-label" data-i18n="contact_hours_label">Horário</span><span class="c-val" data-i18n="contact_hours_val">Segunda a Sábado<br>09:00 — 19:00</span></div>
+      </div>
+      <div class="contact-info-item">
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div><span class="c-label">Email</span><span class="c-val"><a href="mailto:carrossel.barbarasilva@gmail.com" style="color:inherit;text-decoration:none">carrossel.barbarasilva@gmail.com</a></span></div>
       </div>
     </div>
     <div class="reveal-right">
@@ -616,7 +668,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
   <div class="socials">
     <a href="https://www.instagram.com/carrossel.bs/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.facebook.com/carrossel.bs" target="_blank" rel="noopener">Facebook</a>
-    <a href="#">TikTok</a>
+    <a href="https://www.tiktok.com/@carrossel.bs?_r=1&_t=ZG-97F1xSFKCWW" target="_blank" rel="noopener">TikTok</a>
     <a href="https://wa.me/351929442733" target="_blank" rel="noopener">WhatsApp</a>
   </div>
   <p class="footer-copy" data-i18n="footer_copy">© 2026 Carrossel by Bárbara Silva &nbsp;·&nbsp; Todos os direitos reservados</p>
@@ -628,7 +680,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
 const i18n = {
   pt:{
     nav_home:'Início',nav_about:'Sobre Nós',nav_services:'Serviços',nav_gallery:'Galeria',nav_contact:'Contacto',nav_cta:'Orçamento',
-    ticker_1:'Decoração de Festas',ticker_2:'Casamentos & Noivados',ticker_3:'Catering & Staff',ticker_4:'Batizados',ticker_5:'Baby Shower',ticker_6:'Eventos Corporativos',ticker_7:'Fotografia & Vídeo',ticker_8:'Produção Completa',
+    ticker_1:'Decoração de Festas',ticker_2:'Casamentos & Cerimonial',ticker_3:'Catering & Staff',ticker_4:'Batizados',ticker_5:'Baby Shower',ticker_6:'Eventos Corporativos',ticker_7:'Fotografia & Vídeo',ticker_8:'Produção Completa',
     hero_pre:'✦   Eventos & Decoração   ✦',
     hero_h1:'Você sonha,<br><em>nós realizamos</em>',
     hero_sub:'Produção completa de eventos — decoração, catering,<br>staff & muito mais',
@@ -640,9 +692,9 @@ const i18n = {
     about_p3:'Do conceito à execução, estamos contigo em cada passo.',
     services_label:'O que fazemos',services_title:'Os nossos <em>serviços</em>',
     s1_title:'Decoração de Festas',s1_desc:'Aniversários, batizados, baby showers — criamos cenários que surpreendem e encantam cada convidado.',
-    s2_title:'Casamentos & Noivados',s2_desc:'O dia mais especial da sua vida merece uma decoração à altura do vosso amor e da vossa história.',
+    s2_title:'Casamentos & Cerimonial',s2_desc:'O dia mais especial da sua vida merece uma decoração à altura do vosso amor e da vossa história.',
     s3_title:'Catering & Staff',s3_desc:'Gastronomia cuidada e equipa profissional para que não se preocupe com absolutamente nada.',
-    s4_title:'Eventos Corporativos',s4_desc:'Conferências, lançamentos e team buildings com a elegância que a sua empresa e equipa merecem.',
+    s4_title:'Eventos Corporativos',s4_desc:'Conferências, inaugurações, aniversários de empresa e team buildings com a elegância que a sua empresa e equipa merecem.',
     s5_title:'Fotografia & Vídeo',s5_desc:'Preservamos cada memória especial com registo profissional do início ao fim do seu evento.',
     s6_title:'Produção Completa',s6_desc:'Tratamos de tudo, da ideia ao último detalhe. Você apenas desfruta do momento com quem ama.',
     gallery_label:'O nosso trabalho',gallery_title:'Galeria de <em>momentos</em>',gallery_btn:'Ver mais no Instagram',
