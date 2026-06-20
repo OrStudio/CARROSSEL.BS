@@ -345,7 +345,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <span class="counter-label" data-i18n="counter_events">Eventos Realizados</span>
   </div>
   <div class="counter-item reveal">
-    <span class="counter-num" data-target="13"><span class="counter-prefix"></span>0</span>
+    <span class="counter-num" id="yearsCounter"><span class="counter-prefix"></span>0</span>
     <span class="counter-label" data-i18n="counter_years">Anos de Experiência</span>
   </div>
   <div class="counter-item reveal">
@@ -362,12 +362,13 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     </div>
     <div class="about-text reveal-right">
       <p class="section-label" data-i18n="about_label">Sobre nós</p>
-      <h2 class="section-title" data-i18n="about_title">Uma empresa com<br><em>alma e dedicação</em></h2>
+      <h2 class="section-title">Há <span id="aboutYears">14</span> anos transformando sonhos em <em>cenários memoráveis.</em></h2>
       <div class="ornament"><span class="ornament-icon">✦</span></div>
-      <p data-i18n="about_p1">A <strong>Carrossel by Bárbara Silva</strong> nasceu da paixão por criar momentos únicos e inesquecíveis. Acreditamos que cada evento conta uma história — e nós ajudamos a contá-la da forma mais bonita possível.</p>
-      <p data-i18n="about_p2">Desde aniversários íntimos a grandes celebrações, a nossa equipa cuida de cada detalhe com carinho, criatividade e profissionalismo — para que o seu dia seja verdadeiramente perfeito.</p>
-      <p data-i18n="about_p3">Do conceito à execução, estamos contigo em cada passo.</p>
-      <div class="signature">Bárbara Silva</div>
+      <p>A <strong>Carrossel by Bárbara Silva</strong> nasceu de uma grande transformação: a chegada do meu terceiro filho. Quando ele completou um ano, decidi idealizar e organizar a sua festa de aniversário. Foi ali, entre detalhes e sorrisos, que me apaixonei pelo poder de criar memórias. Pouco depois, ao receber o diagnóstico de Asperger dele, escolhi redefinir as minhas prioridades para estar mais presente na sua evolução e cuidar do meu príncipe. Dessa necessidade de conciliar o colo de mãe com o desejo de empreender, a Carrossel ganhou vida.</p>
+      <p>O que começou como um projeto de amor familiar transformou-se numa assinatura de referência na decoração e na organização de eventos premium. Ao longo da nossa trajetória, construímos uma reputação sólida em Portugal e em diversos países, levando elegância, sofisticação e excelência a cada projeto realizado.</p>
+      <p>Acreditamos que cada evento possui uma identidade própria. Por isso, oferecemos um atendimento verdadeiramente personalizado, acompanhando cada cliente desde a conceção da ideia até à concretização de cada detalhe.</p>
+      <p>Mais do que decorar espaços, desenvolvemos projetos completos através de consultoria personalizada, planeamento estratégico e simulações realistas dos ambientes, permitindo que os nossos clientes visualizem cada detalhe antes mesmo da execução.</p>
+      <div class="signature">Carrossel by Bárbara Silva</div>
     </div>
   </div>
 </section>
@@ -838,6 +839,15 @@ document.querySelectorAll('.counter-item').forEach(el=>counterObs.observe(el));
   if(!track) return;
   const cards = track.innerHTML;
   track.innerHTML = cards + cards;
+})();
+
+/* ── DYNAMIC YEARS ── */
+(function(){
+  const years = new Date().getFullYear() - 2012;
+  const span = document.getElementById('aboutYears');
+  if(span) span.textContent = years;
+  const counter = document.getElementById('yearsCounter');
+  if(counter) counter.dataset.target = years;
 })();
 
 /* ── GALLERY CATEGORY TOGGLE ── */
