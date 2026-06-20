@@ -1,0 +1,72 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: pt
+
+media_folder: images
+public_folder: images
+
+collections:
+  - name: galeria
+    label: Galeria de Fotos
+    files:
+      - label: Aniversários & Festas
+        name: aniversarios
+        file: data/aniversarios.json
+        fields:
+          - label: Fotos
+            name: items
+            widget: list
+            field:
+              label: Ficheiro
+              name: src
+              widget: image
+
+      - label: Casamentos & Cerimonial
+        name: casamentos
+        file: data/casamentos.json
+        fields:
+          - label: Fotos
+            name: items
+            widget: list
+            field:
+              label: Ficheiro
+              name: src
+              widget: image
+
+      - label: Batizados & Comunhões
+        name: batizados
+        file: data/batizados.json
+        fields:
+          - label: Fotos
+            name: items
+            widget: list
+            field:
+              label: Ficheiro
+              name: src
+              widget: image
+
+      - label: Catering & Mesa Posta
+        name: catering
+        file: data/catering.json
+        fields:
+          - label: Fotos
+            name: items
+            widget: list
+            field:
+              label: Ficheiro
+              name: src
+              widget: image
+
+      - label: Eventos Corporativos
+        name: corporativos
+        file: data/corporativos.json
+        fields:
+          - label: Fotos
+            name: items
+            widget: list
+            field:
+              label: Ficheiro
+              name: src
+              widget: image
