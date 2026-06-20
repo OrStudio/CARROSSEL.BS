@@ -92,8 +92,8 @@ section{padding:6rem 4rem}
 .ornament-icon{color:var(--gold);font-size:16px;letter-spacing:6px;opacity:.6}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
-.about-img{background:var(--rose-light);aspect-ratio:3/4;width:100%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(196,135,154,.25);border-left:3px solid var(--rose);position:relative;overflow:hidden;margin-left:auto}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
+.about-img{background:var(--rose-light);aspect-ratio:3/4;width:72%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(196,135,154,.25);border-left:3px solid var(--rose);position:relative;overflow:hidden;margin-left:auto}
 .about-img-inner{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:16px}
 .about-text p{font-size:16px;line-height:1.8;color:var(--c-text-mid);margin-bottom:.9rem}
 .about-text strong{color:var(--bordeaux);font-weight:500}
@@ -459,11 +459,20 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
       <h3 class="g-category-title">Casamentos & <em>Cerimonial</em></h3>
       <div class="g-category-line"></div>
     </div>
-    <div class="gallery-grid" style="min-height:200px;background:var(--champagne);display:grid;place-items:center">
-      <div style="grid-column:1/-1;text-align:center;padding:2.5rem 2rem;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--text-light);letter-spacing:1px">
-        Em breve — as primeiras fotografias desta categoria chegam em breve ✦
+    <div class="gallery-grid">
+      <div class="g-item reveal" onclick="openLightbox('images/Casamento_1.jpg')"><img src="images/Casamento_1.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Casamento_2.jpg')"><img src="images/Casamento_2.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
+      <div class="g-item reveal" onclick="openLightbox('images/Casamento_3.jpg')"><img src="images/Casamento_3.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
+    </div>
+    <div class="g-category-extra" id="extra-casamentos">
+      <div class="gallery-grid" style="margin-top:8px">
+        <div class="g-item reveal" onclick="openLightbox('images/Casamento_4.jpg')"><img src="images/Casamento_4.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Casamento_5.jpg')"><img src="images/Casamento_5.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Casamento_6.jpg')"><img src="images/Casamento_6.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
+        <div class="g-item reveal" onclick="openLightbox('images/Casamento_7.jpg')"><img src="images/Casamento_7.jpg" alt="Casamento"><div class="g-overlay"></div><div class="g-tag">Casamento</div></div>
       </div>
     </div>
+    <button class="g-more-btn" onclick="toggleCat('extra-casamentos',this)" data-more="+ Ver mais" data-less="− Ver menos">+ Ver mais</button>
   </div>
 
   <!-- BATIZADOS & COMUNHÕES -->
