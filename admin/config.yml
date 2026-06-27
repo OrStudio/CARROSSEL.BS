@@ -70,3 +70,15 @@ collections:
               label: Ficheiro
               name: src
               widget: image
+
+      - label: Aluguer de Material & Peças
+        name: aluguer
+        file: data/aluguer.json
+        fields:
+          - label: Fotos
+            name: items
+            widget: list
+            field:
+              label: Ficheiro
+              name: src
+              widget: image

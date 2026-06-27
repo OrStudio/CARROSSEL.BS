@@ -315,7 +315,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <span class="ticker-item" data-i18n="ticker_5">Baby Shower</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_6">Eventos Corporativos</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_7">Fotografia & Vídeo</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item" data-i18n="ticker_8">Produção Completa</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item" data-i18n="ticker_8">Aluguer de Material & Peças</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_1">Decoração de Festas</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_2">Casamentos & Cerimonial</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_3">Catering & Staff</span><span class="ticker-sep">✦</span>
@@ -323,7 +323,7 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
     <span class="ticker-item" data-i18n="ticker_5">Baby Shower</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_6">Eventos Corporativos</span><span class="ticker-sep">✦</span>
     <span class="ticker-item" data-i18n="ticker_7">Fotografia & Vídeo</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item" data-i18n="ticker_8">Produção Completa</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item" data-i18n="ticker_8">Aluguer de Material & Peças</span><span class="ticker-sep">✦</span>
   </div>
 </div>
 
@@ -406,9 +406,9 @@ footer{background:#07070F;padding:3.5rem 4rem;text-align:center;border-top:1px s
       <p data-i18n="s5_desc">Preservamos cada memória especial com registo profissional do início ao fim do seu evento.</p>
     </div>
     <div class="service-card">
-      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8l2.5 7.5L34 18l-7.5 2.5L24 28l-2.5-7.5L14 18l7.5-2.5L24 8z"/><path d="M10 32l1.5 4.5L16 38l-4.5 1.5L10 44l-1.5-4.5L4 38l4.5-1.5L10 32z"/><path d="M38 6l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg>
-      <h3 data-i18n="s6_title">Produção Completa</h3>
-      <p data-i18n="s6_desc">Tratamos de tudo, da ideia ao último detalhe. Você apenas desfruta do momento com quem ama.</p>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="20" width="36" height="22" rx="2"/><path d="M6 20l6-10h24l6 10"/><path d="M18 10l-2 10M30 10l2 10"/><path d="M16 31h16M24 26v10"/></svg>
+      <h3 data-i18n="s6_title">Aluguer de Material & Peças</h3>
+      <p data-i18n="s6_desc">Mesas, cadeiras, centros de mesa, arcos florais e muito mais — alugue as peças certas para o seu evento sem preocupações.</p>
     </div>
   </div>
 </section>
@@ -584,7 +584,7 @@ const i18n = {
     s3_title:'Catering & Staff',s3_desc:'Gastronomia cuidada e equipa profissional para que não se preocupe com absolutamente nada.',
     s4_title:'Eventos Corporativos',s4_desc:'Conferências, inaugurações, aniversários de empresa e team buildings com a elegância que a sua empresa e equipa merecem.',
     s5_title:'Fotografia & Vídeo',s5_desc:'Preservamos cada memória especial com registo profissional do início ao fim do seu evento.',
-    s6_title:'Produção Completa',s6_desc:'Tratamos de tudo, da ideia ao último detalhe. Você apenas desfruta do momento com quem ama.',
+    s6_title:'Aluguer de Material & Peças',s6_desc:'Mesas, cadeiras, centros de mesa, arcos florais e muito mais — alugue as peças certas para o seu evento sem preocupações.',
     gallery_label:'O nosso trabalho',gallery_title:'Galeria de <em>momentos</em>',gallery_btn:'Ver mais no Instagram',
     tag_birthday:'Aniversário',tag_spiderman:'Homem Aranha',tag_table:'Mesa & Styling',
     test_label:'O que dizem de nós',test_title:'Palavras que nos <em>enchem o coração</em>',
@@ -621,7 +621,7 @@ const i18n = {
     s3_title:'Catering & Staff',s3_desc:'Carefully curated food and a professional team so you don\'t worry about a thing.',
     s4_title:'Corporate Events',s4_desc:'Conferences, launches and team buildings with the elegance your company and team deserve.',
     s5_title:'Photography & Video',s5_desc:'We preserve every special memory with professional coverage from start to finish.',
-    s6_title:'Full Production',s6_desc:'We handle everything, from idea to last detail. You simply enjoy the moment with those you love.',
+    s6_title:'Material & Piece Rental',s6_desc:'Tables, chairs, centrepieces, floral arches and much more — rent the right pieces for your event without any hassle.',
     gallery_label:'Our work',gallery_title:'Gallery of <em>moments</em>',gallery_btn:'See more on Instagram',
     tag_birthday:'Birthday',tag_spiderman:'Spider-Man',tag_table:'Table & Styling',
     test_label:'What they say about us',test_title:'Words that <em>fill our hearts</em>',
@@ -748,11 +748,12 @@ function toggleCat(id,btn){
 /* ── DYNAMIC GALLERY LOADER ── */
 (function(){
   const CATS=[
-    {id:'aniversarios', file:'data/aniversarios.json', title:'Aniversários & <em>Festas Temáticas</em>', tag:'Aniversário', more:'+ Ver mais festas', less:'− Ver menos'},
-    {id:'casamentos',   file:'data/casamentos.json',   title:'Casamentos & <em>Cerimonial</em>',          tag:'Casamento',   more:'+ Ver mais',       less:'− Ver menos'},
-    {id:'batizados',    file:'data/batizados.json',     title:'Batizados & <em>Comunhões</em>',            tag:'Batizado',    more:'+ Ver mais',       less:'− Ver menos'},
-    {id:'catering',     file:'data/catering.json',      title:'Catering & <em>Mesa Posta</em>',            tag:'Catering',    more:'+ Ver mais',       less:'− Ver menos'},
-    {id:'corporativos', file:'data/corporativos.json',  title:'Eventos <em>Corporativos</em>',             tag:'Corporativo', more:'+ Ver mais eventos',less:'− Ver menos'},
+    {id:'aniversarios', file:'data/aniversarios.json', title:'Aniversários & <em>Festas Temáticas</em>', tag:'Aniversário', more:'+ Ver mais festas',  less:'− Ver menos'},
+    {id:'casamentos',   file:'data/casamentos.json',   title:'Casamentos & <em>Cerimonial</em>',          tag:'Casamento',   more:'+ Ver mais',        less:'− Ver menos'},
+    {id:'batizados',    file:'data/batizados.json',     title:'Batizados & <em>Comunhões</em>',            tag:'Batizado',    more:'+ Ver mais',        less:'− Ver menos'},
+    {id:'catering',     file:'data/catering.json',      title:'Catering & <em>Mesa Posta</em>',            tag:'Catering',    more:'+ Ver mais',        less:'− Ver menos'},
+    {id:'corporativos', file:'data/corporativos.json',  title:'Eventos <em>Corporativos</em>',             tag:'Corporativo', more:'+ Ver mais eventos', less:'− Ver menos'},
+    {id:'aluguer',      file:'data/aluguer.json',        title:'Aluguer de <em>Material & Peças</em>',     tag:'Aluguer',     more:'+ Ver mais peças',  less:'− Ver menos'},
   ];
 
   function makeItem(src, tag){
@@ -779,7 +780,8 @@ function toggleCat(id,btn){
     casamentos:["images/Casamento_1.jpg","images/Casamento_2.jpg","images/Casamento_3.jpg","images/Casamento_4.jpg","images/Casamento_5.jpg","images/Casamento_6.jpg","images/Casamento_7.jpg"],
     batizados:[],
     catering:["images/mesaPosta0.jpg","images/mesaPosta1.jpg","images/mesaPosta2.jpg","images/catering1.jpg","images/catering2.jpg","images/Catering3.jpg","images/mesaPosta5_rosa.jpg","images/mesaPosta6.jpg","images/mesaPosta7.jpg","images/mesaPosta8.jpg","images/mesaPosta9.jpg","images/Catering4.jpg"],
-    corporativos:["images/EventoCorporativo0.jpg","images/Evento_Corporativo1.jpg","images/Evento_Corporativo2.jpg","images/Evento_Corporativo3.jpg","images/Evento_Corporativo4.jpg","images/Evento_Corporativo5.jpg","images/EventoCorporativo7.jpg","images/EventoCorporativo8.jpg","images/EventoCorporativo9.jpg","images/EventoCorporativo10.jpg","images/EventoCorporativo11.jpg","images/EventoCorporativo12.jpg","images/eventoCorporativo13.jpg"]
+    corporativos:["images/EventoCorporativo0.jpg","images/Evento_Corporativo1.jpg","images/Evento_Corporativo2.jpg","images/Evento_Corporativo3.jpg","images/Evento_Corporativo4.jpg","images/Evento_Corporativo5.jpg","images/EventoCorporativo7.jpg","images/EventoCorporativo8.jpg","images/EventoCorporativo9.jpg","images/EventoCorporativo10.jpg","images/EventoCorporativo11.jpg","images/EventoCorporativo12.jpg","images/eventoCorporativo13.jpg"],
+    aluguer:["images/aluguer_peca1.jpg","images/aluguer_peca2.jpg","images/aluguer_peca3.jpg","images/aluguer_peca4.jpg","images/aluguer_peca5.jpg","images/aluguer_peca6.jpg","images/aluguer_peca7.jpg","images/aluguer_peca8.jpg","images/aluguer_peca9.jpg","images/aluguer_peca10.jpg","images/aluguer_peca11.jpg","images/aluguer_peca12.jpg","images/aluguer_peca13.jpg","images/aluguer_peca14.jpg","images/aluguer_peca15.jpg","images/aluguer_peca16.jpg","images/aluguer_peca17.jpg"]
   };
 
   function renderStatic(){
